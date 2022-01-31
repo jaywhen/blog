@@ -11,15 +11,13 @@ const Post = ({ page, blocks }) => {
     if(!page || !blocks) return <div>ops~</div>
 
     return (
-        <div>
-            <h1>{page.properties.name.title[0].plain_text}</h1>
-            <div>
-                <span>{page.properties.date.date.start}</span>
-            </div>
+        <>
+            <h1 className="flex justify-center text-2xl font-bold">{page.properties.name.title[0].plain_text}</h1>
+            <span className="flex justify-center text-sm text-slate-400">{page.properties.date.date.start}</span>
             {blocks.map(block => (
                 <Fragment key={block.id}>{renderNotionBlock(block)}</Fragment>
             ))}
-        </div>
+        </>
     );
 };
 
