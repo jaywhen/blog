@@ -2,7 +2,7 @@ import { Feed } from 'feed';
 import { GetServerSideProps } from 'next';
 import { getDatabase } from '../lib/notion';
 
-const domain = 'http://localhost:3000';
+const domain = 'https://jaywhen.com/';
 const year = new Date().getFullYear();
 
 const generateRSS = (posts) => {
