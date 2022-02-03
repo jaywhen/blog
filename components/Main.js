@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import FontLink from "./FontLink";
 
 const Main = () => {
   return (
@@ -14,9 +15,21 @@ const Main = () => {
                 priority
                 />
           </div>
-          <h1 className="mt-5 font-bold text-2xl">Jaywhen Xiang</h1>
+          <h1 className="mt-5 tracking-wide font-bold text-2xl">
+            <ruby className="font-long-cang text-3xl">向杰文<rt className="font-sans">xiàng jié wén</rt></ruby> / Jaywhen Xiang
+          </h1>
           <Link href="https://twitter.com/jaywhen6"><a target="_blank" rel="noopener noreferrer" className="underline font-semibold text-slate-500">@jaywhen6</a></Link>
-          <p className="mt-5 text-lg">I&apos; m a undergraduates from China. I want to be a front-end dev.</p>
+          <div className="mt-5 leading-loose text-lg tracking-wide">
+            <p>I&apos; m a developer based in China. Mainly using <strong><em>JavaScript</em></strong> to build things.</p>
+            <p>
+              This blog is built using <FontLink text="Next.js" link="https://nextjs.org/" /> and <FontLink text="Notion API" link="https://developers.notion.com/" />
+              ,&nbsp;source code are <FontLink text="here" link="https://github.com/jaywhen/blog" />.
+            </p>
+            <hr className="my-5" />
+            Find me on <FontLink text="GitHub" link="https://github.com/jaywhen" />, <FontLink text="Twitter" link="https://twitter.com/jaywhen6" />. 
+            <br />
+            Mail me at <FontLink text="jaywhen@gmail.com" link="mailto:jaywhen@gmail.com" />.
+          </div>
       </div>
   );
 };
