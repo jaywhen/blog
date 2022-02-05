@@ -34,6 +34,8 @@ const generateRSS = (posts) => {
     return feed.rss2();
 }
 
+const RSSComponent = () => null;
+
 export const getServerSideProps = async ({res}) => {
     if (res) {
         const posts = await getDatabase()
@@ -47,8 +49,5 @@ export const getServerSideProps = async ({res}) => {
         props: {},
     }
 }
-
-
-const RSSComponent = () => null;
 
 export default RSSComponent;

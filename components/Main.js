@@ -4,8 +4,8 @@ import FontLink from "./FontLink";
 
 const Main = () => {
   return (
-      <div>
-          <div className="mt-20 drop-shadow-md">
+      <>
+          <div className="mt-18 drop-shadow-md">
               <Image
                 className="bg-slate-300 rounded-full"
                 src="/avatar.jpg"
@@ -30,7 +30,7 @@ const Main = () => {
             <br />
             Mail me at <FontLink text="jaywhen@gmail.com" link="mailto:jaywhen@gmail.com" />.
           </div>
-      </div>
+      </>
   );
 };
 
