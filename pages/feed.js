@@ -1,5 +1,4 @@
 import { Feed } from 'feed';
-import { GetServerSideProps } from 'next';
 import { getDatabase } from '../lib/notion';
 
 const domain = 'https://jaywhen.com';
@@ -34,7 +33,7 @@ const generateRSS = (posts) => {
     return feed.rss2();
 }
 
-const RSSComponent = () => null;
+const FeedComponent = () => null;
 
 export const getServerSideProps = async ({res}) => {
     if (res) {
@@ -50,4 +49,4 @@ export const getServerSideProps = async ({res}) => {
     }
 }
 
-export default RSSComponent;
+export default FeedComponent;
