@@ -3,7 +3,7 @@ import Link from "next/link";
 const Navbar = () => {
     const links = [
         {name: 'blog', to: '/blog'},
-        {name: 'rss', to: '/rss'},
+        {name: 'rss', to: '/feed'},
     ];
     return (
         <header className="fixed right-0 text-xl left-0 z-4 font-extrabold leading-4 text-slate-600 backdrop-blur-sm bg-white/30">
