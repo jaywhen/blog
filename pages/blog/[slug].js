@@ -1,15 +1,11 @@
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { renderNotionBlock } from "../../components/NotionBlockRenderer";
 import { getBlocks, getDatabase, getPage } from "../../lib/notion";
 import probeImageSize from "../../lib/imageing";
+import Comments from "../../components/Comments";
 
 const Post = ({ page, blocks }) => {
-    useEffect(() => {
-        // console.log(page);
-        console.log(blocks);
-    })
     if(!page || !blocks) return <div>ops~</div>
-
     return (
         <>
             <h1 className="flex justify-center text-2xl font-bold">{page.properties.name.title[0].plain_text}</h1>
@@ -17,6 +13,7 @@ const Post = ({ page, blocks }) => {
             {blocks.map(block => (
                 <Fragment key={block.id}>{renderNotionBlock(block)}</Fragment>
             ))}
+            <Comments />
         </>
     );
 };

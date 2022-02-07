@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@giscus/react": "^1.1.1",
     "@icons-pack/react-simple-icons": "^4.6.1",
     "@notionhq/client": "^0.4.12",
     "feed": "^4.2.2",
