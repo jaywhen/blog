@@ -26,6 +26,8 @@ const Main = () => {
               ,&nbsp;source code are <FontLink text="here" link="https://github.com/jaywhen/blog" />.
             </p>
             <hr className="my-5" />
+            <FontLink text="Hire me" link="/resume.pdf" />
+            <br />
             Find me on <FontLink text="GitHub" link="https://github.com/jaywhen" />, <FontLink text="Twitter" link="https://twitter.com/jaywhen6" />. 
             <br />
             Mail me at <FontLink text="jaywhen@gmail.com" link="mailto:jaywhen@gmail.com" />.

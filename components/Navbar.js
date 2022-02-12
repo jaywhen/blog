@@ -3,6 +3,7 @@ import Link from "next/link";
 const Navbar = () => {
     const links = [
         {name: 'blog', to: '/blog'},
+        {name: 'resume', to: '/resume'},
         {name: 'rss', to: '/feed'},
     ];
     return (
