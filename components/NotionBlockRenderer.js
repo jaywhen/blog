@@ -5,6 +5,7 @@ import { Text } from "./blocks/NotionTextBlock";
 import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 import Latex from 'react-latex-next'
+import NotionBookmark from './blocks/NotionBookmark';
 
 export function renderNotionBlock(block) {
     const { type, id } = block;
@@ -26,44 +27,44 @@ export function renderNotionBlock(block) {
         case 'heading_2':
             return (
                 <h2 id={slugify(value.text[0].plain_text)} className="font-bold mt-4 text-xl mb-2 leading-7 dark:text-white">
-                <Text text={value.text} />
+                  <Text text={value.text} />
                 </h2>
             )
         case 'heading_3':
             return (
                 <h3 id={slugify(value.text[0].plain_text)} className="font-bold mt-4 text-lg mb-2 leading-7 dark:text-white">
-                <Text text={value.text} />
+                  <Text text={value.text} />
                 </h3>
             )
         case 'bulleted_list_item':
             return (
                 <li className="list-disc list-inside my-1">
-                <Text text={value.text} />
+                  <Text text={value.text} />
                 </li>
             )
         case 'numbered_list_item':
             return (
                 <li className="list-decimal list-inside my-1">
-                <Text text={value.text} />
+                  <Text text={value.text} />
                 </li>
             )
         case 'to_do':
             return (
                 <div>
-                <label htmlFor={id}>
-                    <input type="checkbox" id={id} defaultChecked={value.checked} /> <Text text={value.text} />
-                </label>
+                  <label htmlFor={id}>
+                      <input type="checkbox" id={id} defaultChecked={value.checked} /> <Text text={value.text} />
+                  </label>
                 </div>
             )
         case 'toggle':
             return (
                 <details>
-                <summary>
-                    <Text text={value.text} />
-                </summary>
-                {value.children?.map((block) => (
-                    <Fragment key={block.id}>{renderNotionBlock(block)}</Fragment>
-                ))}
+                  <summary>
+                      <Text text={value.text} />
+                  </summary>
+                  {value.children?.map((block) => (
+                      <Fragment key={block.id}>{renderNotionBlock(block)}</Fragment>
+                  ))}
                 </details>
             )
         case 'child_page':
@@ -84,17 +85,17 @@ export function renderNotionBlock(block) {
         case 'quote':
             return (
                 <p className="rounded bg-light-300 border-l-2 my-2 p-2 pl-4 dark:bg-dark-600">
-                <Text text={value.text} />
+                  <Text text={value.text} />
                 </p>
             )
           
         case 'callout':
             return (
                 <p className="rounded flex space-x-2 bg-light-300 border-l-2 my-2 p-2 pl-4 dark:bg-dark-600">
-                <span>{value.icon.emoji}</span>
-                <div>
-                    <Text text={value.text} />
-                </div>
+                  <span>{value.icon.emoji}</span>
+                  <div>
+                      <Text text={value.text} />
+                  </div>
                 </p>
             )
         case 'code':
@@ -112,6 +113,9 @@ export function renderNotionBlock(block) {
             )
         case 'equation':
             return <Latex>{`\\[${value.expression}\\]`}</Latex>
+
+        case 'bookmark':
+            return <NotionBookmark value={value} />
           
         default:
             return <p>`❌ Unsupported block (${type === 'unsupported' ? 'unsupported by Notion API' : type})`</p>

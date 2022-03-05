@@ -5,11 +5,11 @@ import probeImageSize from "../../lib/imageing";
 import Comments from "../../components/Comments";
 
 const Post = ({ page, blocks }) => {
-    if(!page || !blocks) return <div>ops~</div>
+    if (!page || !blocks) return <div>ops~</div>
     return (
         <>
             <h1 className="flex justify-center text-2xl font-bold">{page.properties.name.title[0].plain_text}</h1>
-            <span className="flex justify-center text-sm text-slate-400">{page.properties.date.date.start}</span>
+            <span className="flex justify-center text-sm text-slate-400 mb-2">{page.properties.date.date.start}</span>
             {blocks.map(block => (
                 <Fragment key={block.id}>{renderNotionBlock(block)}</Fragment>
             ))}
@@ -18,7 +18,7 @@ const Post = ({ page, blocks }) => {
     );
 };
 
-export const getServerSideProps = async ({params}) => {
+export const getServerSideProps = async ({ params }) => {
     const { slug } = params;
     const db = await getDatabase(slug);
     const postId = db[0].id;
@@ -36,7 +36,7 @@ export const getServerSideProps = async ({params}) => {
     );
 
     const blocksWithChildren = blocks.map((b) => {
-        if(b.has_children && !b[b.type].children) {
+        if (b.has_children && !b[b.type].children) {
             b[b.type]['children'] = childBlocks.find(x => x.id === b.id)?.children
         }
         return b;
@@ -56,8 +56,8 @@ export const getServerSideProps = async ({params}) => {
             })
     )
 
-    return { 
-        props: { page, blocks: blocksWithChildren } 
+    return {
+        props: { page, blocks: blocksWithChildren }
     }
 }
 
