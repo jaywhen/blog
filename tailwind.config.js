@@ -8,10 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Overpass', ...defaultTheme.fontFamily.sans],
         serif: ['"Old Standard TT"', ...defaultTheme.fontFamily.serif],
-        mono: ['"Overpass Mono"', ...defaultTheme.fontFamily.mono],
-        'long-cang': ['"Long Cang"']
+        mono: ['"JetBrains Mono"', ...defaultTheme.fontFamily.mono],
+        'long-cang': ['"Long Cang"'],
       }
     },
   },

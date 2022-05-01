@@ -6,16 +6,16 @@ const Main = () => {
   return (
       <>
         <div className="mt-18 drop-shadow-md">
-            <Image
-              className="bg-slate-300 rounded-full"
-              src="/avatar.jpg"
-              alt="avatar"
-              width={120}
-              height={120}
-              priority
-              />
+          <Image
+            className="bg-slate-300 rounded-full"
+            src="/avatar.jpg"
+            alt="avatar"
+            width={120}
+            height={120}
+            priority
+            />
         </div>
-        <h1 className="mt-5 tracking-wide font-bold text-2xl [text-shadow:9px_1px_4px_#617aaabf]">
+        <h1 className="mt-5 tracking-wide font-bold text-2xl">
           <ruby className="font-long-cang text-3xl">向杰文<rt className="font-sans">xiàng jié wén</rt></ruby> / Jaywhen Xiang
         </h1>
         <Link href="https://twitter.com/jaywhen6"><a target="_blank" rel="noopener noreferrer" className="underline font-semibold text-slate-500">@jaywhen6</a></Link>
