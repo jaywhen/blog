@@ -3,9 +3,6 @@ import { renderNotionBlock } from "../../components/NotionBlockRenderer";
 import { getBlocks, getDatabase, getPage } from "../../lib/notion";
 import probeImageSize from "../../lib/imageing";
 import Comments from "../../components/Comments";
-import { useEffect } from "react";
-import { blocks, pages } from "../../mock";
-
 
 const Post = ({ page, blocks }) => {
   if (!page || !blocks) return <div>ops~</div>
@@ -58,9 +55,6 @@ export const getServerSideProps = async ({ params }) => {
         b[type] = value;
       })
   )
-
-  // const page = pages[0];
-  // const blocksWithChildren = blocks;
 
   return {
     props: { page, blocks: blocksWithChildren }

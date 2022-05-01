@@ -2,7 +2,7 @@ import Link from "next/link";
 import Tag from "../components/Tag";
 import { REBUILD_TIME } from "../lib/buildTime";
 import { getDatabase } from "../lib/notion";
-import { pages } from "../mock";
+
 const Blog = ({ posts }) => {
   return(
     <div className="mt-10">
@@ -28,7 +28,6 @@ const Blog = ({ posts }) => {
 
 export const getStaticProps = async () => {
   const db = await getDatabase();
-  // const db = pages
   return {
     props: {
       posts: db,
