@@ -2,6 +2,7 @@ import Link from "next/link";
 import Tag from "../components/Tag";
 import { REBUILD_TIME } from "../lib/buildTime";
 import { getDatabase } from "../lib/notion";
+// import { pages } from "../mock";
 
 const Blog = ({ posts }) => {
   return(
@@ -9,7 +10,7 @@ const Blog = ({ posts }) => {
       {
         posts.map((post) => (
           <Link key={post.id} href={`/blog/${post.properties.slug.rich_text[0].text.content}`} passHref>
-            <div className="flex flex-col font-mono justify-between border-none rounded cursor-pointer -mx-2 mb-2 p-2 hover:bg-slate-50 hover:opacity-80">
+            <div className="flex flex-col font-mono justify-between border-none rounded cursor-pointer -mx-2 mb-2 p-2">
               <div className="flex justify-between font-bold">
                 <span className="w-9/12 text-base md:text-xl break-words">{post.properties.name.title[0].text.content}</span>
                 <span className="text-sm md:text-xl text-gray-600">{post.properties.date.date.start}</span>
@@ -28,6 +29,7 @@ const Blog = ({ posts }) => {
 
 export const getStaticProps = async () => {
   const db = await getDatabase();
+  // const db = pages;
   return {
     props: {
       posts: db,

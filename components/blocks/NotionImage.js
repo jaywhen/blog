@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { useEffect } from "react"
 
 export const getMediaCtx = (value) => {
@@ -15,11 +16,15 @@ const NotionImage = ({ value }) => {
 
   return (
     <figure className="my-2">
-      {width && height ? (
-        <img src={imageSrc} alt={imageCaption} width={width} height={height} />
-      ) : (
-        <img src={imageSrc} alt={imageCaption} />
-      )}
+      <div className="shadow-xl">
+        {width && height ? (
+          value.type === 'file' ? (<Image src={imageSrc} alt={imageCaption} width={width} height={height} />) :
+          (<img src={imageSrc} alt={imageCaption} width={width} height={height} />)
+        ) : (
+          value.type === 'file' ? (<Image src={imageSrc} alt={imageCaption} />) :
+          (<img src={imageSrc} alt={imageCaption} />)
+        )}
+      </div>
       {imageCaption && (
         <figcaption>
           <p className="my-2 text-center opacity-80">{imageCaption}</p>

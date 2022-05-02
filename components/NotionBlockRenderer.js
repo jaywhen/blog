@@ -20,7 +20,7 @@ export function renderNotionBlock(block) {
       )
     case 'heading_1':
       return (
-        <h1 id={slugify(value.text[0].plain_text)} className="font-bold mt-4 mb-2 text-2xl leading-7 dark:text-white">
+        <h1 id={slugify(value.text[0].plain_text)} className="font-bold mt-4 mb-2 text-2xl dark:text-white">
           <Text text={value.text} />
         </h1>
       )
@@ -38,7 +38,7 @@ export function renderNotionBlock(block) {
       )
     case 'bulleted_list_item':
       return (
-        <li className="list-disc list-inside my-1">
+        <li className="list-none before:content-['·'] before:text-xl before:font-bold before:mr-2 list-inside my-1">
           <Text text={value.text} />
         </li>
       )
@@ -50,11 +50,11 @@ export function renderNotionBlock(block) {
       )
     case 'to_do':
       return (
-        <div>
+        <>
           <label htmlFor={id}>
             <input type="checkbox" id={id} defaultChecked={value.checked} /> <Text text={value.text} />
           </label>
-        </div>
+        </>
       )
     case 'toggle':
       return (
@@ -100,7 +100,7 @@ export function renderNotionBlock(block) {
       )
     case 'code':
       return (
-        <div className="rounded my-2 overflow-hidden">
+        <div className="rounded my-4 overflow-hidden">
           <div className="font-mono bg-[#2e3440] text-right text-xs w-full opacity-90 py-1 px-2 text-light-50">
             {value.language}
           </div>

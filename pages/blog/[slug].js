@@ -3,12 +3,19 @@ import { renderNotionBlock } from "../../components/NotionBlockRenderer";
 import { getBlocks, getDatabase, getPage } from "../../lib/notion";
 import probeImageSize from "../../lib/imageing";
 import Comments from "../../components/Comments";
+import { useEffect } from 'react';
+import { blocks, pages } from "../../mock";
+
 
 const Post = ({ page, blocks }) => {
+  useEffect(() => {
+    document.title = page.properties.name.title[0].plain_text;
+  }, [page.properties.name.title])
+
   if (!page || !blocks) return <div>ops~</div>
   return (
     <>
-      <h1 className="flex justify-center text-2xl font-mono font-bold">{page.properties.name.title[0].plain_text}</h1>
+      <h1 className="flex justify-center text-3xl font-mono font-bold">{page.properties.name.title[0].plain_text}</h1>
       <span className="flex justify-center text-sm mt-2 text-slate-400 mb-2">{page.properties.date.date.start}</span>
       {blocks.map(block => (
         <Fragment key={block.id}>{renderNotionBlock(block)}</Fragment>
@@ -55,6 +62,9 @@ export const getServerSideProps = async ({ params }) => {
         b[type] = value;
       })
   )
+
+  // const page = pages[0];
+  // const blocksWithChildren = blocks;
 
   return {
     props: { page, blocks: blocksWithChildren }
