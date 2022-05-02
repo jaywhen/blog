@@ -4,7 +4,7 @@ import { getBlocks, getDatabase, getPage } from "../../lib/notion";
 import probeImageSize from "../../lib/imageing";
 import Comments from "../../components/Comments";
 import { useEffect } from 'react';
-import { blocks, pages } from "../../mock";
+// import { blocks, pages } from "../../mock";
 
 
 const Post = ({ page, blocks }) => {
