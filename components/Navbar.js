@@ -7,7 +7,7 @@ const Navbar = () => {
     { name: 'rss', to: '/feed' },
   ];
   return (
-    <header className="fixed font-mono right-0 text-xl left-0 z-4 font-extrabold leading-4 text-slate-600 backdrop-blur-sm bg-white/30">
+    <header className="fixed font-mono right-0 text-xl left-0 z-10 font-extrabold leading-4 text-slate-600 backdrop-blur-sm bg-white/30">
       <div className="flex justify-between h-16 max-w-2xl items-center mx-auto px-6">
         <Link href='/'>Jaywhen</Link>
         <div>

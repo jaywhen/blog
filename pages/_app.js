@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
       router.events.off('hashChangeComplete', handleRouteChange);
     }
   }, [router.events]);
-  
+
   return (
     <Layout>
       <Script

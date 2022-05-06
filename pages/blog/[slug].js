@@ -4,8 +4,7 @@ import { getBlocks, getDatabase, getPage } from "../../lib/notion";
 import probeImageSize from "../../lib/imageing";
 import Comments from "../../components/Comments";
 import { useEffect } from 'react';
-// import { blocks, pages } from "../../mock";
-
+// import { pages ,blocksWithPic, blocksWithExternalPic } from "../../mock";
 
 const Post = ({ page, blocks }) => {
   useEffect(() => {
@@ -64,7 +63,7 @@ export const getServerSideProps = async ({ params }) => {
   )
 
   // const page = pages[0];
-  // const blocksWithChildren = blocks;
+  // const blocksWithChildren = blocksWithPic;
 
   return {
     props: { page, blocks: blocksWithChildren }

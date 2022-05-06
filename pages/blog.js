@@ -2,10 +2,14 @@ import Link from "next/link";
 import Tag from "../components/Tag";
 import { REBUILD_TIME } from "../lib/buildTime";
 import { getDatabase } from "../lib/notion";
+import { useEffect } from 'react';
 // import { pages } from "../mock";
 
 const Blog = ({ posts }) => {
-  return(
+  useEffect(() => {
+    document.title = "Blog";
+  }, [])
+  return (
     <div className="mt-10">
       {
         posts.map((post) => (

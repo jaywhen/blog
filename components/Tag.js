@@ -10,6 +10,7 @@ const bg = {
   'purple': 'bg-purple-200 font-bold p-1 rounded',
   'pink': 'bg-pink-200 font-bold p-1 rounded',
   'gray': 'bg-gray-200 font-bold p-1 rounded',
+  'brown': 'bg-stone-200 font-bold p-1 rounded',
 }
 
 const Tag = (props) => {

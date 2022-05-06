@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 
 const NotionBookmark = (value) => {
   const { url } = value.value;
@@ -7,9 +7,9 @@ const NotionBookmark = (value) => {
 
   useEffect(() => {
     fetch(`/api/bookmark/${encodeURIComponent(url)}`)
-        .then(res => res.json())
-        .then(data => {setPreviewData(data);})
-        .catch(error => setError(error));
+      .then(res => res.json())
+      .then(data => { setPreviewData(data); })
+      .catch(error => setError(error));
   }, [url])
 
   return (
@@ -28,7 +28,7 @@ const NotionBookmark = (value) => {
         <div className='rounded'>
           <img src={previewData.cover} alt={previewData.title} className='w-full h-full' />
         </div>
-    </div>
+      </div>
     </a>
   )
 }
