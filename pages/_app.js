@@ -40,6 +40,10 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
+      <Script
+        strategy='afterInteractive'
+        src='https://cdn.splitbee.io/sb.js'
+      />
       <NextNProgress height={2} color="rgb(47, 79, 79)" options={{ showSpinner: false }} />
       <Component {...pageProps} />
     </Layout>
