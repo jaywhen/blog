@@ -14,7 +14,7 @@ const NotionImage = ({ value }) => {
   } = value || {}
 
   return (
-    <figure className="my-2 flex flex-col items-center justify-center z-0">
+    <figure className="my-4 flex flex-col items-center justify-center z-0">
       <div className="shadow-2xl">
         {width && height ? (
           value.type === 'file' ? (<Image src={imageSrc} alt={imageCaption} width={width} height={height} />) :

@@ -15,7 +15,7 @@ const Post = ({ page, blocks }) => {
   return (
     <>
       <h1 className="flex justify-center text-3xl font-mono font-bold">{page.properties.name.title[0].plain_text}</h1>
-      <span className="flex justify-center text-sm mt-2 text-slate-400 mb-2">{page.properties.date.date.start}</span>
+      <span className="flex justify-center text-sm mt-2 text-slate-400 mb-4">{page.properties.date.date.start}</span>
       {blocks.map(block => (
         <Fragment key={block.id}>{renderNotionBlock(block)}</Fragment>
       ))}
