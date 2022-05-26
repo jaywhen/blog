@@ -12,6 +12,28 @@ const NotionBookmark = (value) => {
       .catch(error => setError(error));
   }, [url])
 
+  if (!previewData) {
+    return (
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        <div className='animate-pulse flex justify-between w-full min-h-28 border-2 rounded hover:bg-gray-200 box-border mb-2'>
+          <div className='flex flex-col justify-between p-2 sm:w-3/5 w-full'>
+            <div className="space-y-2">
+              <div className='h-12 w-full bg-slate-200'></div>
+              <div className='h-5 w-full bg-slate-300'></div>
+            </div>
+            <div className='flex mt-2 items-center'>
+              <div className='rounded-full mr-2 w-6 h-6 bg-slate-400'></div>
+              <div className='w-full bg-slate-300 h-4'></div>
+            </div>
+          </div>
+          <div className='rounded hidden sm:w-2/5 sm:block'>
+            <div className='sm:w-full sm:h-full bg-slate-200'></div>
+          </div>
+        </div>
+      </a>
+    )
+  }
+
   return (
     <a href={url} target="_blank" rel="noopener noreferrer">
       <div className='flex justify-between w-full min-h-28 border-2 rounded hover:bg-gray-200 box-border mb-2'>
