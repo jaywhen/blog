@@ -4,6 +4,7 @@ import { getBlocks, getDatabase, getPage } from "../../lib/notion";
 import probeImageSize from "../../lib/imageing";
 import Comments from "../../components/Comments";
 import { useEffect } from 'react';
+import { REBUILD_TIME } from "../../lib/buildTime";
 // import { pages ,blocksWithPic, blocksWithExternalPic } from "../../mock";
 
 const Post = ({ page, blocks }) => {
@@ -24,7 +25,17 @@ const Post = ({ page, blocks }) => {
   );
 };
 
-export const getServerSideProps = async ({ params }) => {
+export const getStaticPaths = async () => {
+  const db = await getDatabase();
+  return {
+    paths: db.map(p => ({
+      params: { slug: p.properties.slug.rich_text[0].text.content },
+    })),
+    fallback: 'blocking',
+  }
+}
+
+export const getStaticProps = async ({ params }) => {
   const { slug } = params;
   const db = await getDatabase(slug);
   const postId = db[0].id;
@@ -62,11 +73,12 @@ export const getServerSideProps = async ({ params }) => {
       })
   )
 
+  // for dev
   // const page = pages[0];
   // const blocksWithChildren = blocksWithPic;
 
   return {
-    props: { page, blocks: blocksWithChildren }
+    props: { page, blocks: blocksWithChildren, revalidate: REBUILD_TIME }
   }
 }
 

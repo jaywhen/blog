@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import FontLink from "./FontLink";
@@ -5,6 +6,11 @@ import FontLink from "./FontLink";
 const Main = () => {
   return (
     <>
+      <Head>
+        <meta property="og:title" content="jaywhen's blog" /> 
+        <meta property="og:image" content="/avatar.jpg" />
+        <meta property="og:url" content="https://jaywhen.com" />
+      </Head>
       <div className="mt-18 drop-shadow-md">
         <Image
           className="bg-slate-300 rounded-full"

@@ -8,6 +8,8 @@ const Layout = ({ children }) => {
       <Head>
         <title>Jaywhen</title>
         <meta name="description" content="Jaywhen's blog" />
+        <meta name="keywords" content="jaywhen, blog, JavaScript, dev" />
+        <meta name="author" content="jaywhen" />
       </Head>
       <div className="flex flex-col max-w-2xl px-6 min-h-screen mx-auto">
         <Navbar />

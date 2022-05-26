@@ -33,6 +33,7 @@ const Blog = ({ posts }) => {
 
 export const getStaticProps = async () => {
   const db = await getDatabase();
+  // for dev
   // const db = pages;
   return {
     props: {
