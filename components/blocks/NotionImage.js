@@ -1,4 +1,6 @@
 import Image from "next/image"
+import 'react-medium-image-zoom/dist/styles.css'
+import Zoom from 'react-medium-image-zoom'
 
 export const getMediaCtx = (value) => {
   const src = value.type === 'external' ? value.external.url : value.file.url
@@ -15,14 +17,16 @@ const NotionImage = ({ value }) => {
 
   return (
     <figure className="my-4 flex flex-col items-center justify-center z-0">
-      <div className="shadow-2xl">
-        {width && height ? (
-          value.type === 'file' ? (<Image src={imageSrc} alt={imageCaption} width={width} height={height} />) :
-            (<img src={imageSrc} alt={imageCaption} width={width} height={height} />)
-        ) : (
-          value.type === 'file' ? (<Image src={imageSrc} alt={imageCaption} />) :
-            (<img src={imageSrc} alt={imageCaption} />)
-        )}
+      <div className="drop-shadow-2xl">
+        <Zoom>
+          {width && height ? (
+            value.type === 'file' ? (<Image src={imageSrc} alt={imageCaption} width={width} height={height} />) :
+              (<img src={imageSrc} alt={imageCaption} width={width} height={height} />)
+          ) : (
+            value.type === 'file' ? (<Image src={imageSrc} alt={imageCaption} />) :
+              (<img src={imageSrc} alt={imageCaption} />)
+          )}
+        </Zoom>
       </div>
       {imageCaption && (
         <figcaption className="my-2 w-7/12">
