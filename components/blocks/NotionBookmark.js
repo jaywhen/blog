@@ -22,7 +22,7 @@ const NotionBookmark = (value) => {
               <div className='h-5 w-full bg-slate-300'></div>
             </div>
             <div className='flex mt-2 items-center'>
-              <div className='rounded-full mr-2 w-6 bg-slate-400'></div>
+              <div className='rounded-full mr-2 w-6 h-6 bg-slate-400'></div>
               <div className='w-full bg-slate-300 h-4'></div>
             </div>
           </div>
