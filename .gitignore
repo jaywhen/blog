@@ -35,3 +35,6 @@ yarn-error.log*
 
 # mock
 /mock
+
+yarn.lock
+package-lock.json
