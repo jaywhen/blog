@@ -78,8 +78,9 @@ export const getStaticProps = async ({ params }) => {
   // const blocksWithChildren = blocksWithPic;
 
   return {
-    props: { page, blocks: blocksWithChildren, revalidate: REBUILD_TIME }
-  }
+    props: { page, blocks: blocksWithChildren},
+    revalidate: REBUILD_TIME,
+  };
 }
 
 export default Post;
