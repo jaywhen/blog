@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Old Standard TT"', ...defaultTheme.fontFamily.serif],
+        serif: ['"Noto Serif SC"', ...defaultTheme.fontFamily.serif],
+        sans: ['"Noto Sans SC"', ...defaultTheme.fontFamily.sans],
         mono: ['"JetBrains Mono"', ...defaultTheme.fontFamily.mono],
         'long-cang': ['"Long Cang"'],
       }

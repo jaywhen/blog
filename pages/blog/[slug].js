@@ -15,8 +15,8 @@ const Post = ({ page, blocks }) => {
   if (!page || !blocks) return <div>ops~</div>
   return (
     <>
-      <h1 className="flex justify-center text-3xl font-mono font-bold">{page.properties.name.title[0].plain_text}</h1>
-      <span className="flex justify-center text-sm mt-2 text-slate-400 mb-4">{page.properties.date.date.start}</span>
+      <h1 className="mt-6 flex justify-center text-3xl font-sans font-bold">{page.properties.name.title[0].plain_text}</h1>
+      <span className="flex justify-center text-sm mt-2 mb-6 text-slate-400">{page.properties.date.date.start}</span>
       {blocks.map(block => (
         <Fragment key={block.id}>{renderNotionBlock(block)}</Fragment>
       ))}
@@ -78,7 +78,7 @@ export const getStaticProps = async ({ params }) => {
   // const blocksWithChildren = blocksWithPic;
 
   return {
-    props: { page, blocks: blocksWithChildren},
+    props: { page, blocks: blocksWithChildren },
     revalidate: REBUILD_TIME,
   };
 }

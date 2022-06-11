@@ -16,9 +16,10 @@ export function Text({ text }) {
           italic ? 'italic' : '',
           strikethrough ? 'line-through' : '',
           underline ? 'underline' : '',
-          'font-sans',
+          'font-serif',
           'tracking-widest',
           'leading-7',
+          'text-slate-700',
         ].join(' ')}
         style={color !== 'default' ? { color } : {}}
       >

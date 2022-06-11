@@ -1,17 +1,12 @@
+const commonStyle = 'font-medium text-sm py-1 px-2 rounded';
 const bg = {
-  'default': 'bg-gray-200 font-bold p-1 rounded',
-  'red': 'bg-red-200 font-bold p-1 rounded',
-  'orange': 'bg-orange-200 font-bold p-1 rounded',
-  'yellow': 'bg-yellow-200 font-bold p-1 rounded',
-  'green': 'bg-green-200 font-bold p-1 rounded',
-  'teal': 'bg-teal-200 font-bold p-1 rounded',
-  'blue': 'bg-blue-200 font-bold p-1 rounded',
-  'indigo': 'bg-indigo-200 font-bold p-1 rounded',
-  'purple': 'bg-purple-200 font-bold p-1 rounded',
-  'pink': 'bg-pink-200 font-bold p-1 rounded',
-  'gray': 'bg-gray-200 font-bold p-1 rounded',
-  'brown': 'bg-stone-200 font-bold p-1 rounded',
-}
+  'default': `bg-gray-200 ${commonStyle}`,
+  'green': `bg-green-200 ${commonStyle}`,
+  'blue': `bg-blue-200 ${commonStyle}`,
+  'purple': `bg-purple-200 ${commonStyle}`,
+  'gray': `bg-gray-200 ${commonStyle}`,
+  'brown': `bg-stone-200 ${commonStyle}`,
+};
 
 const Tag = (props) => {
   return (

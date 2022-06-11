@@ -25,7 +25,7 @@ const Main = () => {
         <ruby className="font-long-cang text-3xl">向杰文<rt className="font-sans">xiàng jié wén</rt></ruby> / <span className="font-mono">Jaywhen Xiang</span>
       </h1>
       <Link href="https://twitter.com/jaywhen6"><a target="_blank" rel="noopener noreferrer" className="underline font-semibold text-slate-500">@jaywhen6</a></Link>
-      <div className="mt-5 font-mono leading-loose text-lg tracking-wide">
+      <div className="mt-5 font-serif leading-loose text-lg tracking-wide">
         <p>I&apos; m a developer based in China. Mainly using <strong><em>JavaScript</em></strong> to build things.</p>
         <p>
           This blog is built using <FontLink text="Next.js" link="https://nextjs.org/" /> and <FontLink text="Notion API" link="https://developers.notion.com/" />
